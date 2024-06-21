@@ -4,9 +4,27 @@
     <router-link :to="{name: 'about'}">About</router-link>
     <router-link :to="{name: 'jobs'}">Jobs</router-link>
   </nav>
+  <button @click="redirect">SSSS</button>
+  <button @click="orqaga">Orqaga</button>
+  <button @click="oldinga">Oldinga</button>
   <router-view/>
 </template>
 
+<script>
+export default {
+  methods:{
+    redirect() {
+      this.$router.push({name: 'home'})
+    },
+    orqaga() {
+      this.$router.go(-1)
+    },
+    oldinga() {
+      this.$router.go(1)
+    }
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
